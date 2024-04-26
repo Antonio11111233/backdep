@@ -90,22 +90,22 @@ export class AuthService {
 
 		res.cookie(this.REFRESH_TOKEN_NAME, refreshToken, { //REFRESH_TOKEN_NAME название куки, refreshToken(что будет лежать в ней)
 			httpOnly: true, //указываем, что это серверная кука
-			domain: 'REFRESH_TOK',
+			domain: process.env.REF_TOK,
 			expires: expiresIn,//дата окончания токена
 			secure: true,//https кука
 			// lax
-			sameSite: 'lax'
+			sameSite: 'none'
 		})
 	}
 	
 	removeRefreshTokenFromResponse(res: Response) {
 		res.cookie(this.REFRESH_TOKEN_NAME, '', {
 			httpOnly: true,
-			domain: 'REFRESH_TOK',
+			domain: process.env.REF_TOK,
 			expires: new Date(0),
 			secure: true,
 			// lax
-			sameSite: 'lax'
+			sameSite: 'none'
 		})
 	}
 
