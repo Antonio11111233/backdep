@@ -94,7 +94,7 @@ export class AuthService {
 			expires: expiresIn,//дата окончания токена
 			secure: true,//https кука
 			// lax
-			sameSite: 'none'
+			sameSite: 'lax'
 		})
 	}
 	
@@ -105,7 +105,7 @@ export class AuthService {
 			expires: new Date(0),
 			secure: true,
 			// lax
-			sameSite: 'none'
+			sameSite: 'lax'
 		})
 	}
 
