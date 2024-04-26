@@ -92,7 +92,7 @@ export class AuthService {
 			httpOnly: true, //указываем, что это серверная кука
 			domain: process.env.REF_TOK,
 			expires: expiresIn,//дата окончания токена
-			secure: true,//https кука
+			// secure: true,//https кука
 			// lax
 			sameSite: 'lax'
 		})
@@ -103,7 +103,7 @@ export class AuthService {
 			httpOnly: true,
 			domain: process.env.REF_TOK,
 			expires: new Date(0),
-			secure: true,
+			// secure: true,
 			// lax
 			sameSite: 'lax'
 		})
